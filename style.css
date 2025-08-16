@@ -154,6 +154,7 @@ header {
     color:#583E23;
     width: 100%;
     border-top: #583E23;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .contact h2 {
@@ -382,3 +383,4 @@ header {
     border-right: 15px solid #F2D0A9;
     left: -15px;
 }
+
