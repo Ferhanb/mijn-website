@@ -1,26 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="nl">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&display=swap" rel="stylesheet">
-    <title>Ferhan Balci Site</title>
-</head>  
+  <title>Portfolio - Ferhan Balci</title>
+</head>
 
-  <body>
-    <header>
-        <h2 class="logo">Ferhan<span>.</span></h2>    
-        <nav class="navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="cv.html">Portfolio</a></li>
-                <li><a href="contactpage.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body>
+  <header>
+    <h2 class="logo">Ferhan<span>.</span></h2>
+    <nav class="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html" class="active">Portfolio</a></li>
+        <li><a href="contactpage.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="portfolio">
+    <section id="certificaten">
+      <h2> Certificaten</h2>
+      <div class="gallery">
+        <img src="images/certificaat1.jpg" alt="CS50 Certificaat">
+        <img src="images/certificaat2.jpg" alt="School of Data Science Certificaat">
+        <img src="images/certificaat3.jpg" alt="Azure AI Fundamentals Certificaat">
+      </div>
+    </section>
+
+    <section id="ontwerpen">
+  <h2>Ontwerpen met Canva</h2>
+  <div class="gallery">
+    <a href="canva1.jpg"><img src="canva1.jpg" alt="Opendag Flyer"></a>
+    <a href="canva2.png"><img src="canva2.png" alt="Workshop Keramiek Flyer"></a>
+    <a href="canva3.jpg"><img src="canva3.jpg" alt="Stedentrip Flyer"></a>
+    <a href="Canva4.png"><img src="Canva4.png" alt="Workshop Appeltaart Flyer"></a>
+    <a href="Canva5.png"><img src="Canva5.png" alt="Workshop Koken Flyer"></a>
+    <a href="canva6.jpg"><img src="canva6.jpg" alt="Activiteiten Planner"></a>
+  </div>
+</section>
+
+    <section id="hobbys">
+  <h2>Hobby's</h2>
+  <div class="gallery">
+    <a href="Schilderij3.JPG"><img src="Schilderij3.JPG" alt="Bloemen Schilderij"></a>
+    <a href="schilderij2.jpg"><img src="schilderij2.jpg" alt="Astronaut Schilderij"></a>
+    <a href="AlhambraPaleis.jpg"><img src="AlhambraPaleis.jpg" alt="Foto van met weerspiegeling van het Alhambra Paleis in Granada"></a>
+    </div>
+</section>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <img id="lightbox-img" src="" alt="Grote afbeelding">
+</div>
+
+<script>
+  const galleryLinks = document.querySelectorAll('.gallery a');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  galleryLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      lightbox.style.display = 'flex';
+      lightboxImg.src = link.href;
+    });
+  });
+
+  // Klik ergens naast de foto om te sluiten
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+</script>
+
+  <footer>
+    <p>2025 Ferhan Balci</p>
+  </footer>
 </body>
 </html>
